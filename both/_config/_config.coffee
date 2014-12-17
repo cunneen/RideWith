@@ -1,7 +1,7 @@
 @Config =
-	name: 'My App'
-	title: 'Make Meteor Apps. Fast.'
-	subtitle: 'Create beautiful  Meteor apps really fast'
+	name: 'Ride With Me.'
+	title: 'Ride With Me.'
+	subtitle: '#IllRideWithYou'
 	logo: ->
 		'<b>' + @name + '</b>'
 	footer: ->
@@ -15,12 +15,12 @@
 	dashboardRoute: '/dashboard'
 	socialMedia:
 		facebook:
-			url: 'http://facebook.com/benjaminpeterjones'
+			url: 'http://facebook.com/cunneen'
 			icon: 'facebook'
 		twitter:
-			url: 'http://twitter.com/BenPeterJones'
+			url: 'http://twitter.com/app_workshop'
 			icon: 'twitter'
 		github:
-			url: 'http://github.com/yogiben'
+			url: 'http://github.com/cunneen'
 			icon: 'github'
 	publicRoutes: ['home']
