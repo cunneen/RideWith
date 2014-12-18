@@ -18,16 +18,15 @@
 <template name="add">
 	<div class="panel panel-default">
 			<div class="panel-heading">
-				<h3 class="panel-title">Add a Post</h3>
+				<h3 class="panel-title">Add Your Journey</h3>
 			</div>
 			<div class="panel-body">
 				{{#autoForm id="add" collection="Posts" type="insert"}}
-				{{> afQuickField name="title"}}
-				{{> afQuickField name="content"}}
-				<!-- {{> afQuickField name="picture"}} -->
-				{{> afQuickField name="picture"}}
-				<!-- {{> afFileUpload name="picture" collection="Attachments"}} -->
-				<button type="submit" class="btn btn-primary">Add Post</button>
+				{{> afQuickField name="startPoint"}}
+				{{> afQuickField name="endPoint"}}
+				{{> afQuickField name="description"}}
+                {{> afQuickField name="repeat"}}
+				<button type="submit" class="btn btn-primary">Add Journey</button>
 				{{/autoForm}}
 			</div>
 	</div>

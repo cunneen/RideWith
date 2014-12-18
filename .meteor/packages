@@ -7,12 +7,10 @@ standard-app-packages
 coffeescript
 less
 accounts-base
-accounts-password
 aldeed:autoform
 alanning:roles
 aldeed:collection2
 aldeed:simple-schema
-joshowens:accounts-entry
 chrismbeckett:fontawesome4
 raix:handlebar-helpers
 cfs:standard-packages
@@ -31,7 +29,6 @@ yogiben:pretty-emails
 yogiben:pretty-email
 yogiben:autoform-file
 yogiben:admin
-yogiben:bootstrap
 yogiben:autoform-map
 multiply:iron-router-progress
 manuelschoebel:ms-seo
@@ -39,4 +36,8 @@ spiderable
 accounts-facebook
 accounts-google
 accounts-twitter
+accounts-password
+joshowens:accounts-entry
+ian:bootstrap-3
 ian:accounts-ui-bootstrap-3
+

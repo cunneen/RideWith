@@ -1,16 +1,81 @@
+<head>
+  <script type="text/javascript"
+          src="https://maps.googleapis.com/maps/api/js?sensor=true&language=en&libraries=places">
+  </script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+
+      // Advanced usage
+      $(".placepicker").each(function () {
+
+        // find map-element
+        var target = this;
+        var $collapse = $(this).parents('.form-group').next('.collapse');
+        var $map = $collapse.find('.placepicker-map');
+
+        // init placepicker
+        var placepicker = $(this).placepicker({
+          map: $map.get(0)
+        }).data('placepicker');
+
+        // reload map after collapse in
+        $collapse.on('show.bs.collapse', function () {
+
+          window.setTimeout(function () {
+            placepicker.resizeMap();
+            placepicker.reloadMap();
+            if (!$(target).prop('value')) {
+              placepicker.geoLocation();
+            }
+
+          }, 0);
+
+        });
+
+      });
+
+    });
+  </script>
+  <style>
+    .placepicker-map {
+        width: 100%;
+        height: 300px;
+    }
+    .pac-container {
+        border-radius: 5px;
+    }
+  </style>
+
+</head>
+
 <template name="profile">
-	<div class="container">
-		<div class="row" id="champion-messages">
-			{{#autoForm id="updateProfile" collection=Users doc=currentUser type="update"}}
-			<div class="col-md-12">{{> alert}}</div>
-			<div class="col-md-4">
-					{{> afQuickField name="profile.picture"}}
-			</div>
-			<div class="col-md-8">
-				{{> afQuickField name='profile' omitFields="profile.picture"}}
-				<button type="submit" class="btn btn-primary">Update</button>
-			</div>
-			{{/autoForm}}
-		</div>
-	</div>
+  <div class="container">
+    <div class="row" id="champion-messages">
+      {{#autoForm id="updateProfile" collection=Users doc=currentUser type="update"}}
+      <div class="col-md-12">{{> alert}}</div>
+      <div class="col-md-12">
+        {{> afQuickField name="profile.picture"}}
+        {{> afQuickField name='profile' omitFields="profile.picture,profile.myHomeLocation"}}
+        <div class="form-group {{#if afFieldIsInvalid name='myHomeLocation'}}has-error{{/if}}">
+          <div class="input-group"> 
+            <span class="input-group-btn">
+              <button data-toggle="collapse" href="#collapseOne" class="btn btn-default"> <i class="glyphicon glyphicon-globe"></i> </button>
+            </span>
+            {{> afFieldInput name='myHomeLocation'}}
+            <!--<input class="placepicker form-control"/>-->
+          </div>
+          {{#if afFieldIsInvalid name='myHomeLocation'}}
+          <span class="help-block">{{afFieldMessage name='myHomeLocation'}}</span>
+          {{/if}}
+
+          <div id="collapseOne" class="collapse">
+            <div class="placepicker-map thumbnail"></div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+      </div>
+      {{/autoForm}}
+    </div>
+  </div>
 </template>

@@ -47,26 +47,33 @@
         </div>
         <div class="container">
             <div class="row" id="icon-row">
-                <div class="col-md-4 wow fadeInLeft animated" data-wow-delay="0.4s">
+                <div class="col-md-3 wow fadeInLeft animated" data-wow-delay="0.8s">
                     <div class="iconbox">
-                        <i class="fa fa-plane fa-3x"></i>
+                        <i class="fa fa-phone fa-3x"></i>
                     </div>
                     <p class="icntitle">1. Step 1</p>
-                    <p class="icnp">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="icnp"><a href="{{pathFor 'entrySignUp'}}">Register</a> your contact information.</p>
                 </div>
-                <div class="col-md-4 wow fadeInUp animated" data-wow-delay="0.8s">
+                <div class="col-md-3 wow fadeInUp animated" data-wow-delay="1.6s">
                     <div class="iconbox">
-                        <i class="fa fa-bolt fa-3x"></i>
+                        <i class="fa fa-bus fa-3x"></i>
                     </div>
                     <p class="icntitle">2. Step 2</p>
-                    <p class="icnp"> Oratio me istius philosophi non offendit; Qua tu etiam inprudens utebare non numquam.</p>
+                    <p class="icnp"> Add your travel details.</p>
                 </div>
-                <div class="col-md-4 wow fadeInRight animated" data-wow-delay="1.2s">
+                <div class="col-md-3 wow fadeInRight animated" data-wow-delay="2.4s">
                     <div class="iconbox">
-                        <i class="fa fa-check fa-3x"></i>
+                        <i class="fa fa-binoculars fa-3x"></i>
                     </div>
                     <p class="icntitle">3. Step 3</p>
-                    <p class="icnp">Et ille ridens: Video, inquit, quid agas; Duo Reges: constructio interrete.</p>
+                    <p class="icnp">Search for someone with similar travel plans.</p>
+                </div>
+                <div class="col-md-3 wow fadeInRight animated" data-wow-delay="3.2s">
+                    <div class="iconbox">
+                        <i class="fa fa-comments-o fa-3x"></i>
+                    </div>
+                    <p class="icntitle">4. Step 4</p>
+                    <p class="icnp">Contact them and arrange to meet.</p>
                 </div>
             </div>
         </div>
@@ -81,21 +88,20 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <h3>A revolutionary product</h3>
-                    <p>Do really cool stuff really quickly</p>
+                    <h3>Travel safely. Make travel safer.</h3>
+                    <p>Take back our community.</p>
                     <p class="text-center">
-                    <a href="{{Config.about}}" target="_blank" class="btn btn-success">
-                    Made by MeteorFactory
-                    </a>
+                    <a class="btn btn-success" href="{{pathFor 'entrySignUp'}}">Get Started</a>
+                    
                     </p>
                 </div>
                 <div class="col-sm-6">
-                    <img id="ipad" src="/img/ipad.png" alt="" class="wow animated fadeInRight" data-wow-delay="1s">
+                    <img id="ipad" src="/img/ipad2.png" alt="" class="wow animated fadeInRight" data-wow-delay="2s">
                 </div>
             </div>
         </div>
     </section>
-    <section id="final">
+<!--    <section id="final">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 text-center wow fadeInDown animated" data-wow-delay="0.8s">
@@ -111,7 +117,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
 </div>
 {{> footerHome}}
 </template>
@@ -150,7 +156,9 @@
             </div>
             <div class="row">
                 <div class="col-md-12 text-center">
-                    {{{Config.footer}}}
+                  {{{Config.footer}}} <a href="{{Config.about}}" class="home-footer-about" target="_blank" >
+                    The App Workshop
+                    </a>
                 </div>
             </div>
         </div>

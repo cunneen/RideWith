@@ -3,14 +3,34 @@ Schemas = {}
 @Posts = new Meteor.Collection('posts');
 
 Schemas.Posts = new SimpleSchema
-	title:
-		type:String
-		max: 60
+	startPoint:
+    type: String
+    autoform:
+      afFieldInput:
+        type: 'map'
+        # options
+        geolocation: true
+        autolocate: true
 
-	content:
-		type: String
-		autoform:
-			rows: 5
+	endPoint:
+    type: String
+    autoform:
+      afFieldInput:
+        type: 'map'
+        # options
+        geolocation: true
+
+#	description:
+#		type: String
+#    optional: true
+#    max: 2000
+#		autoform:
+#        afFieldInput:
+#            type: 'textarea'
+#            rows: 5
+
+  repeat:
+    type: Boolean
 
 	createdAt: 
 		type: Date
@@ -25,12 +45,6 @@ Schemas.Posts = new SimpleSchema
 			if this.isUpdate
 				new Date()
 
-	picture:
-		type: String
-		autoform:
-			afFieldInput:
-				type: 'fileUpload'
-				collection: 'Attachments'
 
 	owner: 
 		type: String

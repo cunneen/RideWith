@@ -8,8 +8,9 @@
 		@name + ' - Copyright ' + new Date().getFullYear()
 	emails:
 		from: 'noreply@' + Meteor.absoluteUrl()
-	blog: 'http://meteorfactory.io'
-	about: 'http://meteorfactory.io'
+  blog: 'http://appshop.net.au'
+  about: 'http://appshop.net.au'
+  aboutText: 'The App Workshop'
 	username: false
 	homeRoute: '/'
 	dashboardRoute: '/dashboard'
